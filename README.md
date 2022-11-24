@@ -25,3 +25,5 @@ and Etc...
 ## Socials
 [<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white">](https://twitter.com/RFLXN_DEV)
 [<img src="https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=Steam&logoColor=white">](https://steamcommunity.com/id/RFLXN/)
+[<img src="https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=Spotify&logoColor=white">](https://open.spotify.com/user/31ktzd5zp4wlnmn7kxyhn7ahh23e?si=3eebfa33621f4a5c)
+[<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">](https://discordapp.com/users/283549565163143170)
