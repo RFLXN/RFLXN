@@ -11,7 +11,8 @@ Mainly Develop with
 and Also Can Develop with    
 [<img src="https://img.shields.io/badge/Deno-000000?style=for-the-badge&logo=Deno&logoColor=white">](https://deno.land/)
 [<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black">](https://developer.mozilla.org/docs/Web/JavaScript)
-[<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">](https://www.python.org/)    
+[<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">](https://www.python.org/)
+[<img src="https://img.shields.io/badge/Java-f89820?style=for-the-badge">](https://www.oracle.com/java/)    
 [<img src="https://img.shields.io/badge/OracleDB-F80000?style=for-the-badge&logo=Oracle&logoColor=white">](https://www.oracle.com/database/)
 [<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">](https://www.mysql.com/)
 [<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=SQLite&logoColor=white">](https://www.sqlite.org/)    
