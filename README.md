@@ -20,7 +20,7 @@ and Etc...
 
 
 ## Repository Language Stats
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jhchoi123&exclude_repo=postapp,AbstractFactory,RJP_RaspberryPi,PyCharm-Settings,WebStorm-Settings,JisakuPC&hide=css,html&layout=compact)](https://github.com/jhchoi123)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=RFLXN&exclude_repo=postapp,AbstractFactory,RJP_RaspberryPi,PyCharm-Settings,WebStorm-Settings,JisakuPC&hide=css,html&layout=compact)](https://github.com/RFLXN)
 
 ## Socials
 [<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white">](https://twitter.com/RFLXN_DEV)
