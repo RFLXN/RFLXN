@@ -1,6 +1,5 @@
 # RFLXN
 RFLXN is Shorten for Reflexion.   
-I Love Playing Games and Listening Doujin Musics!    
 
 ## About Development
 Mainly Develop with    
