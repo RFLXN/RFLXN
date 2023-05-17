@@ -1,7 +1,7 @@
 # RFLXN
 RFLXN is Shorten for Reflexion.   
 
-## About Development
+## Stacks
 Mainly Develop with    
 [<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">](https://nodejs.org/)
 [<img src="https://img.shields.io/badge/Typescript-3178c6?style=for-the-badge&logo=Typescript&logoColor=white">](https://www.typescriptlang.org/)
