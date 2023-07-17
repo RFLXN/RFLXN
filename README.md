@@ -1,5 +1,5 @@
 # RFLXN
-RFLXN is Shorten for Reflexion.   
+Reflexion -> RFLXN
 
 ## Stacks
 Mainly Develop with    
