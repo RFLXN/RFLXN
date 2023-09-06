@@ -5,8 +5,7 @@ Reflexion -> RFLXN
 Mainly Develop with    
 [<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">](https://nodejs.org/)
 [<img src="https://img.shields.io/badge/Typescript-3178c6?style=for-the-badge&logo=Typescript&logoColor=white">](https://www.typescriptlang.org/)
-[<img src="https://img.shields.io/badge/WebStorm-000000?style=for-the-badge&logo=WebStorm&logoColor=white">](https://www.jetbrains.com/webstorm/)
-[<img src="https://img.shields.io/badge/WindowsTerminal-4D4D4D?style=for-the-badge&logo=WindowsTerminal&logoColor=white">](https://github.com/microsoft/terminal)    
+[<img src="https://img.shields.io/badge/WebStorm-000000?style=for-the-badge&logo=WebStorm&logoColor=white">](https://www.jetbrains.com/webstorm/)  
 and Also Can Develop with    
 [<img src="https://img.shields.io/badge/Deno-000000?style=for-the-badge&logo=Deno&logoColor=white">](https://deno.land/)
 [<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black">](https://developer.mozilla.org/docs/Web/JavaScript)
