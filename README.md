@@ -1,6 +1,8 @@
 # RFLXN
 Reflexion -> RFLXN
 
+Now I'm studying Rust and Nix
+
 ## Stacks
 Mainly Develop with    
 [<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">](https://nodejs.org/)
