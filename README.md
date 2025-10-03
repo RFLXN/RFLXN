@@ -1,5 +1,5 @@
 # RFLXN
-"RFLXN" from shorten word of "reflexion"
+"RFLXN" is shorten word of "reflexion"
 
 ## Stacks
 Mainly Develop with    
