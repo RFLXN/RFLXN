@@ -1,7 +1,5 @@
 # RFLXN
-Reflexion -> RFLXN
-
-Now I'm studying Rust and Nix
+"RFLXN" from shorten word of "reflexion"
 
 ## Stacks
 Mainly Develop with    
