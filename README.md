@@ -1,10 +1,10 @@
 <!------------ BEGIN Header ------------>
-<p style="font-size: 2rem; font-weight: 350;" align="center">RFLXN</p>
+<h1 align="center">RFLXN</h1>
 
-<p style="font-size: 1.25rem; font-weight: 350;" align="center">The tech otaku who loves linux and web development.</p>
+<p align="center">The tech otaku who loves linux and web development.</p>
 
-<img width="49.5%" src="./imgs/fetch.png">
-<img width="49.5%" src="./imgs/tiling.png">
+<img width="100%" src="./imgs/fetch.png">
+<img width="100%" src="./imgs/tiling.png">
 
 <!------------ END Header ------------>
 
@@ -13,9 +13,9 @@
 
 
 <!------------ BEGIN Stacks ------------>
-<p style="font-size: 1.5rem; font-weight: 350;" align="center">Stacks</p>
+<h3 align="center">Stacks</h3>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 Languages<br>
 <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F7DF1E.svg?style=flat-square&logo=javascript&logoColor=ffffff">
 <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=typescript&logoColor=ffffff">
@@ -25,7 +25,7 @@ Languages<br>
 </p>
 
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 DBs<br>
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=ffffff">
 <img alt="MariaDB" src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=ffffff">
@@ -33,7 +33,7 @@ DBs<br>
 <img alt="Redis" src="https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=ffffff">
 </p>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 Runtimes / Libraries / Frameworks<br>
 <img alt="Node.js" src="https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=ffffff">
 <img alt="Express" src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=ffffff">
@@ -44,7 +44,7 @@ Runtimes / Libraries / Frameworks<br>
 <img alt="Spring / Spring Boot" src="https://img.shields.io/badge/Spring%20%2F%20Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=ffffff">
 </p>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 Publishing / DevOps<br>
 <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=ffffff">
 <img alt="AWS" src="https://img.shields.io/badge/AWS-FF9900?style=flat-square">
@@ -60,9 +60,9 @@ Publishing / DevOps<br>
 <hr>
 <br>
 
-<p style="font-size: 1.5rem; font-weight: 350;" align="center">Environments</p>
+<h3 align="center">Environments</h3>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">There are 3 systems:
+<p align="center">There are 3 systems:
 <img alt="Desktop" src="https://img.shields.io/badge/Desktop-ED1C24?style=flat-square&logo=amd&logoColor=ffffff">
 <img alt="Home Server" src="https://img.shields.io/badge/Home%20Server-ED1C24?style=flat-square&logo=amd&logoColor=ffffff">
 <img alt="Asahi-Linux M1 Macbook" src="https://img.shields.io/badge/Asahi--Linux%20M1%20Macbook-A61200?style=flat-square&logo=asahilinux&logoColor=ffffff">
@@ -71,7 +71,7 @@ And every systems are based on NixOS.<br>
 So, you can check <img alt="Github:RFLXN/nix-flake" src="https://img.shields.io/badge/Github-RFLXN%2Fnix--flake-181717?style=flat-square&logo=github&logoColor=ffffff&link=https%3A%2F%2Fgithub.com%2FRFLXN%2Fnix-flake">
 </p>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 <img alt="NixOS" src="https://img.shields.io/badge/NixOS-5277C3?style=flat-square&logo=nixos&logoColor=ffffff">
 <img alt="JetBrains IDE" src="https://img.shields.io/badge/JetBrains%20IDE-000000?style=flat-square&logo=jetbrains&logoColor=ffffff">
 <img alt="Static Badge" src="https://img.shields.io/badge/VSCode-0076B8?style=flat-square&logoColor=ffffff">
@@ -83,9 +83,9 @@ So, you can check <img alt="Github:RFLXN/nix-flake" src="https://img.shields.io/
 <hr>
 <br>
 
-<p style="font-size: 1.5rem; font-weight: 350;" align="center">Socials</p>
+<h3 align="center">Socials</h3>
 
-<p style="font-size: 1.15rem; font-weight: 350;" align="center">
+<p align="center">
 <img alt="X:@RFLXN_DEV" src="https://img.shields.io/badge/X-%40RFLXN__DEV-000000?style=flat-square&logo=x&logoColor=ffffff&link=https%3A%2F%2Fx.com%2FRFLXN_DEV">
 <img alt="Static Badge" src="https://img.shields.io/badge/Spotify-RFLXN-000000?style=flat-square&logo=spotify&logoColor=ffffff&labelColor=1ED760&link=https%3A%2F%2Fopen.spotify.com%2Fuser%2F31ktzd5zp4wlnmn7kxyhn7ahh23e%3Fsi%3Dcb96ce5661004a65">
 <img alt="Static Badge" src="https://img.shields.io/badge/Steam-RFLXN-000000?style=flat-square&logo=steam&link=https%3A%2F%2Fsteamcommunity.com%2Fid%2FRFLXN%2F">
