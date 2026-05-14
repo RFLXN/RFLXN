@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --app-bg: #0d1612;
+  --app-text-strong: #eef7f1;
+  --app-text: #dde9e1;
+  --app-text-soft: #c8d8ce;
+  --app-text-muted: #a7bcb0;
+  --app-text-subtle: #80958a;
+  --app-text-faint: #5d7266;
+  --app-border: rgb(226 244 233 / 0.10);
+  --app-border-strong: rgb(226 244 233 / 0.16);
+  --app-surface: rgb(236 248 240 / 0.06);
+  --app-surface-strong: rgb(236 248 240 / 0.09);
+  --app-surface-overlay: rgb(6 12 9 / 0.58);
+  --app-header: rgb(6 12 9 / 0.72);
+  --app-accent: #91cfa9;
+  --app-accent-soft: rgb(145 207 169 / 0.14);
+  --app-accent-border: rgb(145 207 169 / 0.28);
+  --app-focus: rgb(145 207 169 / 0.54);
+  --app-focus-neutral: rgb(226 244 233 / 0.42);
+  --app-glow-body-top: rgb(99 153 122 / 0.24);
+  --app-glow-body-side: rgb(92 140 129 / 0.18);
+  --app-glow-top: rgb(99 153 122 / 0.28);
+  --app-glow-orb: rgb(92 140 129 / 0.22);
+  color-scheme: dark;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme inline {
+  --font-sans: "Noto Sans KR", "Noto Sans", sans-serif;
+  --color-app-bg: var(--app-bg);
+  --color-app-text-strong: var(--app-text-strong);
+  --color-app-text: var(--app-text);
+  --color-app-text-soft: var(--app-text-soft);
+  --color-app-text-muted: var(--app-text-muted);
+  --color-app-text-subtle: var(--app-text-subtle);
+  --color-app-text-faint: var(--app-text-faint);
+  --color-app-border: var(--app-border);
+  --color-app-border-strong: var(--app-border-strong);
+  --color-app-surface: var(--app-surface);
+  --color-app-surface-strong: var(--app-surface-strong);
+  --color-app-surface-overlay: var(--app-surface-overlay);
+  --color-app-header: var(--app-header);
+  --color-app-accent: var(--app-accent);
+  --color-app-accent-soft: var(--app-accent-soft);
+  --color-app-accent-border: var(--app-accent-border);
+  --color-app-focus: var(--app-focus);
+  --color-app-focus-neutral: var(--app-focus-neutral);
+  --color-app-glow-orb: var(--app-glow-orb);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, var(--app-glow-body-top), transparent 34%),
+    radial-gradient(circle at 85% 20%, var(--app-glow-body-side), transparent 24%),
+    var(--app-bg);
+}
+
+#root {
+  height: 100%;
+}
