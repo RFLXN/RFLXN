@@ -3,8 +3,7 @@
 
 <p align="center">The tech otaku who loves linux and web development.</p>
 
-<img width="100%" src="./imgs/fetch.png">
-<img width="100%" src="./imgs/tiling.png">
+<img width="100%" src="./imgs/shell.png">
 
 <!------------ END Header ------------>
 
