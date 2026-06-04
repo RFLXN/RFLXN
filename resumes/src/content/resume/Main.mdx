@@ -1,0 +1,176 @@
+import {
+  EducationCard,
+  EducationItem,
+  EducationTitle,
+  ListCard,
+  Main as MainColumn,
+  ProfileCard,
+  ProjectGrid,
+  ProjectItem,
+  ProjectList,
+  ProjectMiniItem,
+  ProjectsCard,
+  ResumeContent,
+  Sidebar,
+  StackCard,
+  StackNote,
+  StackRow,
+  Workstyle,
+  WorkstyleItem,
+} from '../../components/resume';
+
+<ResumeContent>
+  <Sidebar>
+    <ListCard icon="keypoints" title="Keypoints" variant="soft">
+      - **Backend-oriented Full-Stack**    
+      백엔드를 중심으로 FE까지 연결
+      - **Semi DevOps**    
+      Cloud, Docker 기반 개발/배포    
+      GitHub Actions 기반 CI/CD 구축
+      - **Linux-friendly**    
+      NixOS 기반의 개발 환경/서버
+      - **Collab**    
+      팀장/강의 경험    
+      현업 개발자와의 프로젝트 경험
+    </ListCard>
+
+    <StackCard icon="stack" title="Tech Stacks">
+      <StackRow label="Core">
+        **JS Ecosystems**    
+        (Node.js / Typescript)
+      </StackRow>
+      <StackRow label="BE">
+        **RestAPI**(Express/NestJS)    
+        **Auth**(Passport.js, JWT)
+      </StackRow>
+      <StackRow label="FE">
+        **JSX**(React/Next.js)    
+        **State**(Zustand)
+      </StackRow>
+      <StackRow label="Data">
+        **RDB**(MySQL/PostgreSQL)    
+        **Cache**(Redis)    
+        **ORM**(Prisma/TypeORM)
+      </StackRow>
+      <StackRow label="Ship/Ops">
+        **Cloud**(AWS/Cloudflare)    
+        **Container**(Docker)    
+        **CI/CD**(GitHub Actions)    
+        **Linux**(Deb-based/NixOS)
+      </StackRow>
+      <StackRow label="Others">
+        Java, Python    
+        Agentic Coding
+      </StackRow>
+    </StackCard>
+
+    <EducationCard icon="education" title="Education">
+      <EducationItem period="2019.03 - 2021.03">
+        <EducationTitle>
+          <ruby>専門学校東京テクニカルカレッジ<rt>도쿄 테크니컬 칼리지</rt></ruby>
+          <ruby>情報処理科<rt>정보처리과</rt></ruby>&nbsp;<ruby>卒業<rt>졸업</rt></ruby>
+        </EducationTitle>
+        2년간 일본 유학 - Java/OOP, DB 등    
+        성적 우수 장학금    
+        유학생 신분으로 졸업 프로젝트 팀장
+      </EducationItem>
+      <EducationItem period="2022.02 - 2025.02">
+        <EducationTitle>
+          한국외국어대학교    
+          컴퓨터·전자시스템공학부 졸업
+        </EducationTitle>
+        편입 - CS 지식 보강     
+        졸업 논문 - Rust 기반 WASM 성능 비교
+      </EducationItem>
+    </EducationCard>
+  </Sidebar>
+
+  <MainColumn>
+    <ProfileCard icon="profile" title="Profile">
+      JS 생태계를 주력으로 BE와 FE를 모두 다룹니다.    
+      FE는 Interactive Table같은 데이터/대시보드/백오피스 쪽으로 자신있습니다.    
+      BE는 RestAPI부터 WS, DB, Auth까지 모두 가능합니다.    
+      JS 위주로 개발했지만, Python이나 Java/Kotlin같은 다른 환경에서도 문제 없습니다.    
+      개발에서 그치지 않고, Docker나 Clound, GitHub Actions 등의 배포 작업에도 관심있습니다.    
+      Linux 기반의 개발환경을 선호하며, Agentic AI 도구들도 활용 가능합니다.
+    </ProfileCard>
+
+    <ProjectsCard icon="projects" title="Projects / Actvities">
+      <ProjectList>
+        <ProjectItem
+          featured
+          title="[FE] 동적 속성 테이블 기반 CRM 서비스 “이노시트”"
+          href="https://github.com/InnoSage/front-end"
+          meta="HUFS Capstone"
+          chips={['Next.js', 'TypeScript', 'AG Grid', 'Zustand', 'Docker', 'AWS', 'Cloudflare']}
+        >
+          현업 멘토의 지도 하에 진행한 한국외대 캡스톤 프로젝트(졸업작품) 입니다.    
+          동적인 type/col/row를 가지는 table을 위주로 CRM 서비스의 프론트엔드를 구현 및 배포했습니다.
+
+          - Next.js/TypeScript, Mantine (UI), Zustand (State Management), AG Grid (Table) 기반으로 구현
+          - Next.js Server Actions와 REST API를 기반으로 JWT 로그인/인증을 구현
+          - Docker, AWS ECS/ECR, Cloundflake를 활용한 Next.js 프론트엔드 서버 배포
+        </ProjectItem>
+
+        <ProjectItem
+          featured
+          title={"[BE] 중고 대여 플랫폼 \"빌빌\""}
+          href="https://github.com/billbill-umc/bilbil_backend"
+          meta="UMC"
+          chips={['Node.js', 'Express', 'MySQL', 'Redis', 'Socket.io', 'GitHub Actions', 'Docker']}
+        >
+          대학 연합 동아리 UMC의 팀 프로젝트입니다.     
+          당근마켓 모티브의 중고 "대여" 앱의 백엔드 전반을 담당했습니다.
+
+          - Express/JavaScript 기반의 REST API 구현
+          - MySQL + Knex.js(SQL Builder) 기반의 DB 구성
+          - Passport.js/JWT 기반의 로그인/인증 구현
+          - Redis Pub/Sub를 MQ처럼 이용 + Socket.io를 WS 백엔드로 이용하여 실시간 채팅 구현
+          - GitHub Actions, Docker, AWS ECR/EC2 기반의 CI/CD 및 배포 구현
+        </ProjectItem>
+
+        <ProjectItem
+          title="UMC Node.js 파트장 활동"
+          href="https://github.com/RFLXN/6th-umc-node-ts"
+          meta="UMC ・ Study Session Leadership"
+          chips={['Club Activity', 'Leading']}
+        >
+          대학 연합 동아리 활동에서 파트장으로 활동했습니다.
+
+          - 대학 연합 동아리 UMC에서 한국외대 Node.js 파트장으로 스카웃됨    
+          - 주변 대학의 파트장을 담당할 인원이 부족해 타학교의 Node.js 파트의 활동도 동시에 감독    
+          - 기존의 동아리 교재는 JS 기반이었기에 직접 만든 TypeScript 핸드북을 활용    
+          - 약 12명의 인원들에게 10번의 세션에 걸쳐 강의 진행
+        </ProjectItem>
+
+        <ProjectItem
+          title="Linux(NixOS) 기반의 개발 환경 구성 + 홈서버 운영"
+          href="https://github.com/RFLXN/nix-flake"
+          meta="Personal Infra"
+          chips={['NixOS', 'Linux', 'systemd', 'Docker', 'Home Server', 'Hyprland']}
+        >
+          데스크탑, Asahi Linux 맥북, 홈서버를 Linux(NixOS) 로 관리하고 있습니다.    
+          
+          - Nix flake를 통해 3대의 시스템에서 "일관된" 환경 유지
+          - Linux를 메인 OS로 이용하며 Linux 기반 개발/운영 경험 축적
+          - systemd 같은 modern linux ecosystem에 익숙함    
+          → Cloud 기반이 아닌 베어메탈/온프레미스 서버 관리도 가능함
+          - 리눅스 데스크탑 환경에서 마주하는 여러 버그들의 Issue Reporting이나 PR을 통한 오픈소스 기여 활동
+        </ProjectItem>
+      </ProjectList>
+
+      <ProjectGrid>
+        <ProjectMiniItem title="JisakuPC" href="https://github.com/RFLXN/JisakuPC">
+          일본에서의 졸업 프로젝트로 팀장을 맡았습니다.    
+          지금 다시 보면 완전 날것의 코드입니다만,    
+          당시 환경에서 최선을 다해 웹 서비스를 설계/구현했습니다.
+        </ProjectMiniItem>
+        <ProjectMiniItem title="Portfolio Site" href="https://github.com/RFLXN/RFLXN/tree/main/portfolio-sites">
+          Vite + React 기반으로 포트폴리오 사이트를 구성하고,     
+          GitHub Pages로 배포했습니다.
+        </ProjectMiniItem>
+      </ProjectGrid>
+    </ProjectsCard>
+    
+  </MainColumn>
+</ResumeContent>

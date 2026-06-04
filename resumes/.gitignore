@@ -1,0 +1,8 @@
+# Build outputs
+dist/
+node_modules/
+
+# Local environment
+.direnv/
+.envrc
+ctx.md
