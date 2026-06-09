@@ -28,8 +28,8 @@ const profileItems = [
       />
     ),
     label: "Email",
-    text: "solid2113@naver.com",
-    href: "mailto:solid2113@naver.com"
+    text: "jobs@rflxn.work",
+    href: "mailto:jobs@rflxn.work"
   },
   {
     icon: <SvgIcon iconName="github" />,
