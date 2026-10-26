@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap");
+/* Neutral charcoal palette shared by the desktop, windows, and boot screen. */
+:root {
+  --bg: #171717;
+  --base: #222222;
+  --window-surface: rgb(28 28 28 / 92%);
+  --window-header: rgb(18 18 18 / 94%);
+  --header: #121212;
+  --surface: #2b2b2b;
+  --surface-hover: #353535;
+  --fg: #e0e0e0;
+  --text: #b8b8b8;
+  --muted: #929292;
+  --accent: #bcbcbc;
+  --accent-hover: #f0f0f0;
+  --on-accent: #ffffff;
+  --accent-soft: #ffffff14;
+  --accent-faint: #ffffff06;
+  --border: #00000040;
+  --highlight: #ffffff1a;
+  --focus-border: #ffffff26;
+  --focus-ring: #aaaaaa70;
+  --close-hover: #454545;
+  --sheen: #ffffff10;
+  --watermark: #ffffff99;
+}
+:root {
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  font-synthesis: none;
+  font-weight: 400;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--bg);
+}
+body {
+  margin: 0;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+}
+button:focus-visible {
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+.window-titlebar {
+  user-select: none;
+}
+button svg {
+  flex-shrink: 0;
+}
+.desktop-shell {
+  isolation: isolate;
+  background: var(--bg);
+  height: 100dvh;
+  min-height: 320px;
+  overflow: clip;
+}
+.topbar {
+  height: 48px;
+  --bar-surface: var(--bg);
+  --skirt-radius: 22px;
+  background: var(--bar-surface);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+
+  z-index: 1000;
+  filter: drop-shadow(0 3px 3px #0005);
+}
+/* Inverted corners join the bar to the desktop edges: the bar's skirt.
+   These overlays never intercept window controls underneath them. */
+.topbar::before,
+.topbar::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: var(--skirt-radius);
+  height: var(--skirt-radius);
+  pointer-events: none;
+}
+.topbar::before {
+  left: 0;
+  background: radial-gradient(
+    circle at 100% 100%,
+    transparent calc(var(--skirt-radius) - 0.5px),
+    var(--bar-surface) var(--skirt-radius)
+  );
+}
+.topbar::after {
+  right: 0;
+  background: radial-gradient(
+    circle at 0 100%,
+    transparent calc(var(--skirt-radius) - 0.5px),
+    var(--bar-surface) var(--skirt-radius)
+  );
+}
+.current-window {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 30px;
+  padding: 8px 13px;
+  background: var(--base);
+  font-size: 0.75rem;
+  color: var(--fg);
+  max-width: 24%;
+  overflow: hidden;
+}
+.current-window span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  margin-left: auto;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--base);
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text);
+  user-select: none;
+}
+.bar-brand:hover {
+  color: var(--fg);
+  background: var(--surface-hover);
+}
+.bar-brand:focus-visible {
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+.bar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.running-apps {
+  --window-slot-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  min-width: 50px;
+  max-width: 25vw;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--base);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+/* Share spare capsule space equally; auto margins collapse when scrolling. */
+.running-apps > :first-child {
+  margin-inline-start: auto;
+}
+.running-apps > :last-child {
+  margin-inline-end: auto;
+}
+.running {
+  display: grid;
+  place-items: center;
+  position: relative;
+  flex: 0 0 var(--window-slot-size);
+  width: var(--window-slot-size);
+  height: var(--window-slot-size);
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 120ms ease;
+}
+.running:hover {
+  background: var(--surface-hover);
+}
+.running.active {
+  background: var(--accent-soft);
+}
+.running:focus-visible {
+  outline-offset: -1px;
+}
+.running-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+}
+.papirus-icon {
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.running.minimized .running-icon {
+  opacity: 0.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .running {
+    transition: none;
+  }
+}
+.no-windows {
+  flex: 0 0 var(--window-slot-size);
+  width: var(--window-slot-size);
+  height: var(--window-slot-size);
+  display: grid;
+  place-items: center;
+}
+.no-windows span {
+  width: 8px;
+  height: 8px;
+  background: var(--muted);
+  border-radius: 50%;
+}
+.clock {
+  display: flex;
+  gap: 15px;
+  white-space: nowrap;
+  border-radius: 30px;
+  background: var(--base);
+  padding: 8px 13px;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  color: var(--fg);
+}
+.desktop {
+  height: calc(100% - 48px);
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--bg);
+}
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 0;
+  background: #080808 url("/wallpapers/city-bokeh-4k-16x9.png") center / cover
+    no-repeat;
+  pointer-events: none;
+}
+.desktop-apps {
+  position: absolute;
+  z-index: 1;
+  left: 25px;
+  top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.desktop-shortcut {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  width: 108px;
+  padding: 13px 4px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-shadow: 0 1px 8px #0008;
+}
+.desktop-shortcut:hover {
+  background: var(--accent-faint);
+}
+.app-icon {
+  width: 59px;
+  height: 59px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  filter: drop-shadow(0 3px 4px #0003);
+}
+.shortcut-arrow {
+  position: absolute;
+  right: 4px;
+  bottom: 3px;
+  opacity: 0.6;
+}
+.shortcut-description {
+  font-size: 0.5625rem;
+  color: var(--text);
+  margin-top: -5px;
+}
+
+/* Alpha belongs to the surface, never to the whole window or document.
+   The opaque desktop and wallpaper remain behind this translucent layer. */
+.window {
+  position: absolute;
+  background: var(--window-surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  box-shadow:
+    0 25px 80px #0005,
+    0 3px 12px #0004;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.window[hidden] {
+  display: none;
+}
+.window.focused {
+  border-color: var(--focus-border);
+}
+.window.maximized {
+  border-radius: 0;
+}
+.window-titlebar {
+  height: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 17px;
+  background: var(--window-header);
+  border-bottom: 1px solid var(--border);
+  border-radius: 12px 12px 0 0;
+  touch-action: none;
+}
+.window.maximized .window-titlebar {
+  border-radius: 0;
+}
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.6875rem;
+  color: var(--fg);
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+.window-controls button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 26px;
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+}
+.window-controls button:hover {
+  background: var(--surface-hover);
+}
+.window-controls .close:hover {
+  background: var(--close-hover);
+  color: var(--on-accent);
+}
+.window-content {
+  overflow: auto;
+  flex: 1;
+  border-radius: 0 0 12px 12px;
+}
+.resize-handle {
+  position: absolute;
+  touch-action: none;
+}
+.resize-n,
+.resize-s {
+  height: 6px;
+  left: 9px;
+  right: 9px;
+  cursor: ns-resize;
+}
+.resize-n {
+  top: -3px;
+}
+.resize-s {
+  bottom: -3px;
+}
+.resize-e,
+.resize-w {
+  width: 6px;
+  top: 9px;
+  bottom: 9px;
+  cursor: ew-resize;
+}
+.resize-e {
+  right: -3px;
+}
+.resize-w {
+  left: -3px;
+}
+.resize-ne,
+.resize-nw,
+.resize-se,
+.resize-sw {
+  width: 13px;
+  height: 13px;
+}
+.resize-ne {
+  top: -3px;
+  right: -3px;
+  cursor: nesw-resize;
+}
+.resize-nw {
+  top: -3px;
+  left: -3px;
+  cursor: nwse-resize;
+}
+.resize-se {
+  bottom: -3px;
+  right: -3px;
+  cursor: nwse-resize;
+}
+.resize-sw {
+  bottom: -3px;
+  left: -3px;
+  cursor: nesw-resize;
+}
+@media (max-width: 600px) {
+  .topbar {
+    height: 44px;
+    padding: 0 6px;
+  }
+  .current-window {
+    max-width: 26%;
+    padding: 8px;
+    font-size: 0.625rem;
+    gap: 5px;
+  }
+  .bar-center {
+    position: static;
+    transform: none;
+    margin-inline: auto;
+    gap: 4px;
+  }
+  .bar-brand {
+    gap: 4px;
+    margin-left: 4px;
+    padding: 0 8px;
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+  .clock {
+    font-size: 0.625rem;
+    gap: 7px;
+    padding: 8px;
+  }
+  .running-apps {
+    padding: 3px 5px;
+    min-width: 40px;
+  }
+  .desktop {
+    height: calc(100% - 44px);
+  }
+  .desktop-apps {
+    left: 10px;
+    top: 17px;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--header);
+}
+.window-content {
+  scrollbar-color: var(--surface-hover) var(--base);
+}
+.running.active {
+  box-shadow: inset 0 0 0 1px var(--focus-border);
+}
+
+/* Animate only lifecycle visuals: dragging and resizing stay immediate. */
+.running-apps {
+  transition: width 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.running {
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+.running-icon {
+  transition:
+    opacity 220ms ease,
+    filter 220ms ease;
+}
+.running.minimized .running-icon {
+  filter: saturate(0.65);
+}
+@media (prefers-reduced-motion: reduce) {
+  .running-apps,
+  .running,
+  .running-icon {
+    transition: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .clock > span:first-child {
+    display: none;
+  }
+}
+
+/* Shortcuts wrap into a new column when the desktop is short. */
+.desktop-apps {
+  bottom: 16px;
+  right: 16px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px 14px;
+  pointer-events: none;
+}
+.desktop-shortcut {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.shortcut-description {
+  max-width: 100%;
+  font-size: 0.5625rem;
+}
+
+/* One root unit controls typography across apps, desktop and boot screen.
+   Medium is the new default (125% of the previous type sizes). */
+:root {
+  font-size: 20px;
+  --text-scale: 1.25;
+}
+:root[data-text-size="small"] {
+  font-size: 16px;
+  --text-scale: 1;
+}
+:root[data-text-size="large"] {
+  font-size: 24px;
+  --text-scale: 1.5;
+}
+.bar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.bar-right .bar-brand {
+  margin-left: 0;
+}
+.text-size-widget {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--base);
+}
+.text-size-label {
+  display: grid;
+  place-items: center;
+  padding: 0 7px 0 5px;
+  margin-right: 3px;
+  color: var(--text);
+  border-right: 1px solid var(--highlight);
+}
+.text-size-widget button {
+  display: grid;
+  place-items: center;
+  min-width: 27px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1;
+}
+.text-size-widget button:hover {
+  background: var(--surface-hover);
+  color: var(--fg);
+}
+.text-size-widget button[aria-pressed="true"] {
+  background: #ffffff18;
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px var(--focus-border);
+}
+/* Use normal flow before the centered group can collide with the controls. */
+@media (max-width: 1050px) {
+  .bar-center {
+    position: static;
+    transform: none;
+    margin-inline: auto;
+    min-width: 0;
+  }
+  .topbar {
+    gap: 6px;
+  }
+  .current-window {
+    min-width: 0;
+    max-width: 18%;
+  }
+  .bar-right {
+    margin-left: 0;
+  }
+  .clock > span:first-child {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .current-window span,
+  .bar-brand span {
+    display: none;
+  }
+  .current-window {
+    flex-shrink: 0;
+  }
+  .bar-right {
+    gap: 4px;
+  }
+  .bar-brand {
+    padding-inline: 8px;
+  }
+  .clock {
+    padding-inline: 6px;
+  }
+}
+@media (max-width: 400px) {
+  .clock {
+    display: none;
+  }
+  .running-apps {
+    max-width: 27vw;
+  }
+}
+
+.desktop-shortcut {
+  width: max(108px, 6.75rem);
+}
+.shortcut-description {
+  word-break: keep-all;
+}

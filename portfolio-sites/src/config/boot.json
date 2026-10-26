@@ -1,0 +1,70 @@
+{
+  "enabled": true,
+  "title": [
+    " ____  _____ _    __  __ _   _ ",
+    "|  _ \\|  ___| |   \\ \\/ /| \\ | |",
+    "| |_) | |_  | |    \\  / |  \\| |",
+    "|  _ <|  _| | |___ /  \\ | |\\  |",
+    "|_| \\_\\_|   |_____/_/\\_\\|_| \\_|"
+  ],
+  "subtitle": "Personalized graphical shell",
+  "transitionMs": 500,
+  "logs": [
+    {
+      "text": "Booting...",
+      "durationMs": 100,
+      "type": "plain"
+    },
+    {
+      "text": "[    0.000000] Initializing personal space",
+      "durationMs": 220,
+      "type": "plain"
+    },
+    {
+      "text": "[    0.041208] Loading desktop environment",
+      "durationMs": 280,
+      "type": "plain"
+    },
+    {
+      "text": "Mounted /home/rflxn.",
+      "durationMs": 160,
+      "type": "ok"
+    },
+    {
+      "text": "Started window manager.",
+      "durationMs": 260,
+      "type": "ok"
+    },
+    {
+      "text": "Loaded Charcoal theme.",
+      "durationMs": 180,
+      "type": "ok"
+    },
+    {
+      "text": "Loaded Papirus icon theme.",
+      "durationMs": 180,
+      "type": "ok"
+    },
+    {
+      "type": "skip",
+      "text": "Restore previous session (no saved session).",
+      "durationMs": 240
+    },
+    {
+      "text": "Reached target Graphical Interface.",
+      "durationMs": 300,
+      "type": "ok"
+    },
+    {
+      "text": "",
+      "durationMs": 100,
+      "type": "plain"
+    },
+    {
+      "text": "Welcome home, visitor.",
+      "durationMs": 600,
+      "type": "plain"
+    }
+  ],
+  "titleLabel": "rflxn linux"
+}

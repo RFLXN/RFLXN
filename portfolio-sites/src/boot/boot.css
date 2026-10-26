@@ -1,0 +1,140 @@
+.boot-desktop[aria-hidden="true"] {
+  visibility: hidden;
+}
+.boot-desktop {
+  outline: none;
+}
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(24px, 5vw, 72px);
+  background: #121212;
+  opacity: 1;
+  color: var(--text);
+  font:
+    0.8125rem / 1.85 ui-monospace,
+    "SFMono-Regular",
+    "Cascadia Code",
+    "Liberation Mono",
+    monospace;
+}
+.boot-header {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.boot-header strong {
+  color: var(--fg);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.boot-header > span {
+  color: var(--muted);
+  font-size: 0.6875rem;
+}
+.boot-log {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface) transparent;
+}
+.boot-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-height: 1.85em;
+}
+.boot-ok {
+  color: var(--accent);
+}
+.boot-cursor {
+  color: var(--fg);
+  animation: boot-blink 1s step-end infinite;
+}
+.boot-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+.boot-footer button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: var(--text);
+  padding: 8px 0 8px 12px;
+  font-size: 0.6875rem;
+}
+.boot-footer button:hover {
+  color: var(--fg);
+}
+.boot-footer button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.boot-footer kbd {
+  border: 1px solid var(--highlight);
+  border-radius: 4px;
+  padding: 0 5px;
+  font: inherit;
+}
+.boot-leaving {
+  pointer-events: none;
+}
+@keyframes boot-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (max-width: 600px) {
+  .boot-screen {
+    font-size: 0.6875rem;
+    gap: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-cursor {
+    animation: none;
+  }
+}
+
+.boot-logo {
+  margin: 0;
+  color: var(--fg);
+  font: inherit;
+  font-size: clamp(0.625rem, calc(2.2vw * var(--text-scale)), 0.9375rem);
+  line-height: 1.2;
+  white-space: pre;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+.boot-header {
+  min-height: 0;
+  max-height: 35dvh;
+  overflow: auto;
+  flex-shrink: 0;
+}
+.boot-badge {
+  display: inline-block;
+  white-space: pre;
+  margin-right: 1ch;
+}
+.boot-pending {
+  color: var(--muted);
+}
+.boot-skip {
+  color: var(--muted);
+}
+.boot-warn {
+  color: #f27835;
+}
+.boot-fail {
+  color: #fc4138;
+}

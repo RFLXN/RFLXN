@@ -1,36 +1,19 @@
 {
-  description = "Node.js + pnpm";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  };
-
+  description = "Development shell for the rflxn desktop";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   outputs = { nixpkgs, ... }:
     let
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
+      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
-    in
-    {
+    in {
       devShells = forAllSystems (system:
-        let
-          pkgs = import nixpkgs { inherit system; };
-        in
-        {
+        let pkgs = import nixpkgs { inherit system; };
+        in {
           default = pkgs.mkShell {
-            packages = [
-              pkgs.nodejs
-              pkgs.pnpm
-            ];
-
+            packages = [ pkgs.nodejs_24 ];
             shellHook = ''
-              echo "Node dev shell ready."
-              echo "node: $(node --version)"
-              echo "pnpm: $(pnpm --version)"
+              echo "desktop dev shell · $(node --version)"
+              echo "npm ci && npm run dev"
             '';
           };
         });
